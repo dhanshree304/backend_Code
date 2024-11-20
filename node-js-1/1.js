@@ -18,4 +18,4 @@ console.log(data);//2
 console.log("Hope u read the file")//3
 
 const checkEven=require("is-even")
-console.log(checkEven)
+console.log(checkEven(7))
