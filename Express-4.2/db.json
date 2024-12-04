@@ -1,0 +1,10 @@
+{
+  "todos": [],
+  "posts": [],
+  "products": [
+    { "id": 1, "price": 200 },
+    { "id": 2, "price": 600 },
+    { "id": 3, "price": 400 },
+    { "id": 4, "price": 900 }
+  ]
+}
