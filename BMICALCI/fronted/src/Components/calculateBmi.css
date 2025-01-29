@@ -1,0 +1,62 @@
+.mainDiv {
+  width: 25%;
+  height: 600px;
+  margin: auto;
+  border-radius: 30px;
+  background: linear-gradient(
+    30deg,
+    rgba(102, 244, 173, 0.916),
+    rgb(134, 239, 239)
+  );
+   display: flex;
+   flex-direction: column;
+    /* align-items: end;
+    justify-content: center;  */
+}
+
+.subDiv {
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  margin: auto;
+  border-radius: 30px;
+  margin-top: 10px;
+  border: 2px solid rgba(102, 244, 173, 0.916);
+}
+
+input {
+  background-color: rgba(188, 244, 244, 0.694);
+  height: 30px;
+  width: 80%;
+  border-radius: 20px;
+  border: none;
+  margin-top: 5px;
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+
+ .imgDiv {
+  display: flex;
+} 
+
+.imgDiv > div > img {
+  height: 150px;
+  width: 150px;
+  mix-blend-mode: multiply;
+}
+.imgDiv > div > button {
+  border-radius: 50px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: red;
+  font-weight: bold;
+}

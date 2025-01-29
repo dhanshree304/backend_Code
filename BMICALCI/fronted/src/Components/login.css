@@ -1,0 +1,49 @@
+.mainDiv {
+  width: 20%;
+  height: 500px;
+  margin: auto;
+  border-radius: 30px;
+  background: linear-gradient(
+    30deg,
+    rgba(102, 244, 173, 0.916),
+    rgb(134, 239, 239)
+  );
+  /* display: flex;
+    align-items: end;
+    justify-content: center; */
+}
+
+.subDiv {
+  width: 80%;
+  height: 245px;
+  padding: 20px;
+  background-color: white;
+  margin: auto;
+  border-radius: 30px;
+  margin-top: 10px;
+  border: 2px solid rgba(102, 244, 173, 0.916);
+ 
+}
+
+.blend {
+  mix-blend-mode: multiply; /* Works best with white backgrounds */
+  height: 200px;
+  width: 200px;
+}
+input {
+  background-color: rgba(188, 244, 244, 0.694);
+  height: 30px;
+  width: 80%;
+  border-radius: 20px;
+  border: none;
+  margin-top: 5px;
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+input:focus {
+  border: none;
+  outline: none;
+}

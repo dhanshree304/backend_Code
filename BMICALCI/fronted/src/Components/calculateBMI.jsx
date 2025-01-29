@@ -1,9 +1,11 @@
 import { useState } from "react";
-
+import "./calculateBmi.css";
 const CalculateBMI = () => {
   const [height, setHeight] = useState("");
   const [weight, setweight] = useState("");
   const [result, setResult] = useState(null);
+
+  const [gender, setGender] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,27 +30,66 @@ const CalculateBMI = () => {
       });
   };
   return (
-    <div>
-      <h1>Calculate BMI</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter height in feet"
-          onChange={(e) => setHeight(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder=" Enter weight"
-          onChange={(e) => setweight(e.target.value)}
-        />
-        <input type="submit" value="SUBMIT" />
-      </form>
-
-      {result && (
-        <div>
-          <h1>Your BMI is {result.toFixed(2)}</h1>
+    <div className="mainDiv">
+      {gender === "" && (
+        <div className="imgDiv">
+          <div>
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.On4mTZwiOs77-u2E97-A6QHaHa&pid=Api&P=0&h=220"
+              alt=""
+            />
+            <button
+              onClick={() => setGender("female")}
+              style={{
+                backgroundColor:
+                  gender === "female" ? "rgb(35, 236, 236)" : "unset",
+              }}
+            >
+              FEMALE
+            </button>
+          </div>
+          <div>
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.IkLYdobJ8Ux8CAX0AfuXIQHaHa&pid=Api&P=0&h=220"
+              alt=""
+            />
+            <button
+              onClick={() => setGender("male")}
+              style={{
+                backgroundColor:
+                  gender === "male" ? "rgb(35, 236, 236)" : "unset",
+              }}
+            >
+              MALE
+            </button>
+          </div>
         </div>
       )}
+
+      <div className="subDiv">
+        <form onSubmit={handleSubmit}>
+          <label>Enter height in feet</label>
+          <input type="text" onChange={(e) => setHeight(e.target.value)} />
+          <br />
+          <br />
+          <label>Enter weight</label>
+          <input type="number" onChange={(e) => setweight(e.target.value)} />
+          <br />
+          <br />
+          <input type="submit" value="CALCULATE BMI" />
+        </form>
+
+        {result && (
+          <div>
+            <h1>Your BMI is {result.toFixed(2)}</h1>
+          </div>
+        )}
+      </div>
+
+
+
+
+      
     </div>
   );
 };

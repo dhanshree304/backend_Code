@@ -49,6 +49,7 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body)
   const user = await userModel.findOne({ email });
   console.log(user); //{_id,name,email,password}_id->675fde7e9d51377d5d48462f->pooja1
   const hashed_password = user.password; //**** */
@@ -69,12 +70,16 @@ app.post("/login", async (req, res) => {
   });
 });
 
+
+
 app.get("/getProfile", authentication, (req, res) => {
   //const {user_id} =req.body
   const user = userModel.findOne({ user_id });
   const { name, email } = user;
   res.send({ name, email });
 });
+
+
 
 app.post("/calculateBMI", authentication, async (req, res) => {
   const { height, weight, user_id } = req.body;
@@ -89,6 +94,8 @@ app.post("/calculateBMI", authentication, async (req, res) => {
   await new_bmi.save();
   res.send({ BMI }); //****why object */
 });
+
+
 
 app.get("/getCalculation", authentication, async (req, res) => {
   const { user_id } = req.body;
