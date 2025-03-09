@@ -1,7 +1,7 @@
 // src/components/BMIHistory.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { data } from "react-router-dom";
+
 
 const BMIHistory = () => {
   const [bmiHistory, setBmiHistory] = useState([]);
@@ -20,7 +20,7 @@ const BMIHistory = () => {
             },
           }
         );
-        console.log(response.data)
+        console.log(response.data);
         setBmiHistory(response.data.history);
       } catch (err) {
         setError("Error fetching BMI history.");
@@ -33,12 +33,22 @@ const BMIHistory = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      className="mainDiv"
+      style={{
+        maxHeight:"100%",
+        overflowY:"scroll",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        fontWeight: "bold",
+      }}
+    >
       <h2>BMI History</h2>
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
       {!loading && !error && (
-        <table border="1" cellPadding="10">
+        <table border="1" cellPadding="20">
           <thead>
             <tr>
               <th>Date</th>

@@ -1,23 +1,8 @@
 
 
-.mainDiv {
-  width: 25%;
-  height: 600px;
-  margin: auto;
-  border-radius: 30px;
-  background: linear-gradient(
-    30deg,
-    rgba(102, 244, 173, 0.916),
-    rgb(134, 239, 239)
-  );
-  /* display: flex;
-    align-items: end;
-    justify-content: center; */
-}
-
 .subDiv {
   width: 80%;
-  height: 245px;
+  height: auto;
   padding: 20px;
   background-color: white;
   margin: auto;

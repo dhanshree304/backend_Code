@@ -49,7 +49,11 @@ const Signup = () => {
           />
           <br />
           <br />
-          <input type="submit" value="SIGNUP" />
+          <input
+            type="submit"
+            value="SIGNUP"
+            style={{ backgroundColor: "rgba(33, 229, 229, 0.69)",height:"40px",width:"110px",fontSize:"1.2rem" }}
+          />
           <br />
         </form>
       </div>
