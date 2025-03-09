@@ -15,17 +15,17 @@ notesController.get("/", async (req, res) => {
 });
 
 notesController.post("/create", async (req, res) => {
-  const { Heading, Note, Tag, userId } = req.body;
+  const { heading, note, tag, userId } = req.body;
   console.log(req.body)
-  const note = new noteModel({
-    Heading,
-    Note,
-    Tag,
+  const Note = new noteModel({
+    heading,
+    note,
+    tag,
     userId,
-  });
+  })
   try {
-    await note.save();
-    res.send("note created");
+    await Note.save();
+    res.send({msg:"note created"});
   } catch (err) {
     res.send("something went wrong");
   }

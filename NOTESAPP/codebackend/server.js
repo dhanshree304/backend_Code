@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", usersController);
-app.use(authentication);
-app.use("/notes", notesController);
+
+app.use("/notes",authentication, notesController);
 
 app.listen(PORT, async () => {
   try {
