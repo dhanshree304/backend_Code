@@ -1,5 +1,3 @@
-
-
 .subDiv {
   width: 80%;
   height: auto;
@@ -9,7 +7,6 @@
   border-radius: 30px;
   margin-top: 10px;
   border: 2px solid rgba(102, 244, 173, 0.916);
- 
 }
 
 .blend {
@@ -33,4 +30,18 @@ label {
 input:focus {
   border: none;
   outline: none;
+}
+
+.welcomeDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+@media screen and (max-width: 456px) {
+  .welcomeDiv {
+    flex-direction: column-reverse;
+  }
+  
 }

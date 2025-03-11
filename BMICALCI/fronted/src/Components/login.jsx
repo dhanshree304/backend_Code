@@ -32,7 +32,8 @@ const Login = () => {
   //https:cdn-icons-png.flaticon.com/512/4140/4140039.png
   return (
     <div className="mainDiv">
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <div 
+       className="welcomeDiv">
         <img
           src="https://tse1.mm.bing.net/th?id=OIP.r2WgI0BAeoQEQh4cp441hQHaHa&pid=Api&P=0&h=220"
           alt=""
