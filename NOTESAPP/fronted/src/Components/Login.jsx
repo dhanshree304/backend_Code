@@ -15,7 +15,7 @@ const Login = () => {
       password,
     };
 
-    fetch("http://localhost:9091/users/login", {
+    fetch("https://notes-app-mqjp.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,11 +26,11 @@ const Login = () => {
       .then((res) => {
         console.log(res);
 
-     setToken(res.token)
-        
+        setToken(res.token);
+
         alert("successfully login");
-      
-     navigate("/notes/create")
+
+        navigate("/notes/create");
       })
 
       .catch((err) => console.log(err));

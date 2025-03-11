@@ -15,7 +15,7 @@ const Register = () => {
       password,
     };
 
-    fetch("http://localhost:9091/users/signup", {
+    fetch("https://notes-app-mqjp.onrender.com/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

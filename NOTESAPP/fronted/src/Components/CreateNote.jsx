@@ -17,7 +17,7 @@ const CreateNote = () => {
 
   const getData = (t) => {
 
-    fetch("http://localhost:9091/notes", {
+    fetch("https://notes-app-mqjp.onrender.com/notes", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${t}`,
@@ -29,7 +29,7 @@ const CreateNote = () => {
   };
 
   const deleteNote = (id) => {
-    fetch(`http://localhost:9091/notes/delete/${id}`, {
+    fetch(`https://notes-app-mqjp.onrender.com/notes/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -51,14 +51,17 @@ const CreateNote = () => {
       note,
     };
 
-    const res = await fetch("http://localhost:9091/notes/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(payload),
-    });
+    const res = await fetch(
+      "https://notes-app-mqjp.onrender.com/notes/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      }
+    );
     const data = await res.json();
     setHeading("");
     setNote("");
