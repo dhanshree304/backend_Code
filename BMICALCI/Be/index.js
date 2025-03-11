@@ -52,22 +52,27 @@ app.post("/login", async (req, res) => {
   console.log(req.body);
   const user = await userModel.findOne({ email });
   console.log(user); //{_id,name,email,password}_id->675fde7e9d51377d5d48462f->pooja1
-  const hashed_password = user.password; //**** */
-  const user_id = user._id; //**** */
-  console.log(user_id); //675fde7e9d51377d5d48462f->pooja1
-  bcrypt.compare(password, hashed_password, function (err, result) {
-    if (err) {
-      res.send("Something went wrong,try again");
-    }
-    const secretKey = "abcd12345";
-    if (result) {
-      const token = jwt.sign({ user_id }, secretKey); //token ya provide data vrun create hot .
-      // //.aani ha data aapn decode krto when needed
-      res.send({ msg: "Login successful", token }); //*** */why obj
-    } else {
-      res.send("Login failed");
-    }
-  });
+  if(user){
+const hashed_password = user.password; //**** */
+const user_id = user._id; //**** */
+console.log(user_id); //675fde7e9d51377d5d48462f->pooja1
+bcrypt.compare(password, hashed_password, function (err, result) {
+  if (err) {
+    res.send("Something went wrong,try again");
+  }
+  const secretKey = "abcd12345";
+  if (result) {
+    const token = jwt.sign({ user_id }, secretKey); //token ya provide data vrun create hot .
+    // //.aani ha data aapn decode krto when needed
+    res.send({ msg: "Login successful", token }); //*** */why obj
+  } else {
+    res.send("Login failed");
+  }
+});
+  }else{
+    res.send("user not found")
+  }
+  
 });
 
 app.get("/getProfile", authentication, (req, res) => {
