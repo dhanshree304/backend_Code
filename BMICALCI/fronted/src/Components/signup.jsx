@@ -14,7 +14,7 @@ const Signup = () => {
       email,
       password,
     };
-    fetch("http://localhost:8080/signup", {
+    fetch("https://bmi-calculator-api.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

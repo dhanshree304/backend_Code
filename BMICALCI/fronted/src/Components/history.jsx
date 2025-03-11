@@ -12,7 +12,7 @@ const BMIHistory = () => {
     const fetchBMIHistory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/getCalculation`, // Replace with your backend URL
+          `https://bmi-calculator-api.onrender.com/getCalculation`, // Replace with your backend URL
           {
             headers: {
               "Content-Type": "application/json",

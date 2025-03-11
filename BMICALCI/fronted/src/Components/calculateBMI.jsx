@@ -15,7 +15,7 @@ const CalculateBMI = () => {
       height,
       weight,
     }
-    fetch("http://localhost:8080/calculateBMI", {
+    fetch("https://bmi-calculator-api.onrender.com/calculateBMI", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
